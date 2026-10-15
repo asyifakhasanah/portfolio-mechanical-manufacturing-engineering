@@ -74,14 +74,14 @@
     .hero-card p { color: #94a3b8; font-size: 0.95rem; margin-bottom: 28px; line-height: 1.5; }
 
     /* ------------------------------------
-       4. TOMBOL UTAMA
+       4. TOMBOL UTAMA (3 PILIHAN)
     ------------------------------------ */
-    .button-group { display: flex; flex-direction: column; gap: 16px; }
+    .button-group { display: flex; flex-direction: column; gap: 14px; }
 
     .btn {
-      padding: 16px 24px;
+      padding: 14px 20px;
       border-radius: 12px;
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 600;
       display: flex;
       align-items: center;
@@ -226,22 +226,32 @@
     <p>Please select the document you would like to view from the list below. For a clearer view of the document’s contents, please download the file</p>
 
     <div class="button-group">
-      <!-- Tombol Preview CV (Google Drive) -->
-      <button class="btn btn-secondary" onclick="openPreviewDrive('1TW8RGIK--PYM981a2FrBCtq0PLpA5KeE', 'Preview Curriculum Vitae PDF')">
+      <!-- 1. Tombol CV (Bahasa Indonesia) -->
+      <button class="btn btn-secondary" onclick="openPreviewDrive('1TW8RGIK--PYM981a2FrBCtq0PLpA5KeE', 'Preview CV (IDN)')">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
           <circle cx="12" cy="12" r="3"></circle>
         </svg>
-        Curriculum Vitae
+        Lihat & Unduh CV (IDN)
       </button>
 
-      <!-- Tombol Preview Portofolio (Google Drive) -->
-      <button class="btn btn-primary" onclick="openPreviewDrive('1EwlLQI4Oo6rEZEc12HoxPsRfiuo2SX8l', 'Preview Portofolio PDF')">
+      <!-- 2. Tombol CV (Bahasa Inggris) -->
+      <button class="btn btn-secondary" onclick="openPreviewDrive('1TW8RGIK--PYM981a2FrBCtq0PLpA5KeE', 'Preview CV (ENG)')">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
           <circle cx="12" cy="12" r="3"></circle>
         </svg>
-        Portfolio
+        Lihat & Unduh CV (ENG)
+      </button>
+
+      <!-- 3. Tombol Portofolio -->
+      <button class="btn btn-primary" onclick="openPreviewDrive('1EwlLQI4Oo6rEZEc12HoxPsRfiuo2SX8l', 'Preview Portofolio PDF')">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+        Lihat & Unduh Portofolio PDF
       </button>
     </div>
 
@@ -293,7 +303,7 @@
       slides[currentSlide].classList.add('active');
     }, 2000);
 
-    // Fungsi Buka Preview untuk File Google Drive (CV & Portofolio)
+    // Fungsi Buka Preview Google Drive
     function openPreviewDrive(fileId, titleText) {
       document.getElementById('modalTitle').innerText = titleText;
       
